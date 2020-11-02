@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+  background-color: azure;
+}
+h1 {
+  text-align: center;
+}
+#destinations {
+  display: none;
+}
+#showExtra {
+  display: none;
+}
+#extras {
+  display: none;
+}

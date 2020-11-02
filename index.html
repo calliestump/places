@@ -5,14 +5,32 @@
   <script src="js/scripts.js"></script>
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <title></title>
+  <title>Favorite Places</title>
 </head>
 <body>
   <div class="container">
-    <h1></h1>
-    <form id="">
-      <button class="btn btn-secondary" id="submitButton">Submit</button>></button>
+    <h1>Favorite Places</h1>
+    <h3>Add a favorite place</h3>
+    <form id="places">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination">
+      <br>
+      <label for="year">Year:</label>
+      <input type="text" id="year">
+      <br>
+      <label for="landmark">Landmarks:</label>
+      <input type="text" id="landmark">
+      <br>
+      <br>
+      <button class="btn btn-secondary" id="submitButton">Submit</button>
     </form>
+    <h1>Here are your destinations</h1>
+    <ul id="destinations"></ul>
+
+    <div id="extras">
+      <p>Year: <span class="year"></span></p>
+      <p>Land Mark: <span class="landmark"></span></p>
+    </div>
   </div>
 </body>
 </html>
