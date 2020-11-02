@@ -1,40 +1,30 @@
-function AddDestination() {
-  this.outputDestination = [];
+function AddDestination(destination) {
+  outputDestination = [];
+  outputDestination.push(destination)
 }
 AddDestination.prototype.addDestination = function(destination) {
-  this.outputDestination.push(destination);
-}
-
-function Extra(destination, year, landmark) {
-  this.destination = destination;
-  this.year = year;
-  this.landmark = landmark;
-}
-Extra.prototype.extras = function() {
-  return this.year + " " + this.landmark;
-}
-jQuery("#InputDestinations").click(function() {
-  $(this).data("clicked", true);
-}); 
-function branching() {
-  if(jQuery("#inputDestinations").data("clicked")) {
-    $("#extras").show();
-  }
+  outputDestination.push(destination);
 }
 $(document).ready(function() {
-  //let idNumber = 1;
-  let final = new AddDestination();
-  $("form#places").submit(function(event) {
+  landmark = $("#landmark").val();
+  year = $("#year").val();
+  $("#places").submit(function(event) {
     event.preventDefault();
-    //$("#destinations").show();
-    let finalDes = new Extra($("#inputDestination").val(), $("#year").val(), $("#landmark").val());
-    //let destination = $("#destinations").val();
-    //let year = $("#year").val();
-    //let landmark = $("#landmark").val();
-   // let location = new Extra(destination, year, landmark);
-
-    final.addDestination($("#inputDestination").val());
-    branching();
-    $("#outputDestination").append("<li>" +  destination.extras(destination) + "</li>");
+    let destination = $("input#inputDestination").val();
+    $(".year").text($("#year").val());
+    $(".landmark").text($("#landmark").val());
+    $("#outputDestination").append("<h3 id='" + destination + "'>" + destination + "</h3>");
+    $("#" + destination ).after("<p>" + $("#year").val() + "</p>");
+    $("#" + destination ).after("<p>" + $("#landmark").val() + "</p>");
+    $("p").hide();
+  });
+  $("#outputDestination").click(function(event) {
+    event.preventDefault();
+    let destination = $("input#inputDestination").val();
+    $("p").hide();
+    $("#" + destination).next().show();
+    $("#" + destination).next().next().show();
+    $("#extras").show();
+    //$("outputDestination").hide();
   });
 });

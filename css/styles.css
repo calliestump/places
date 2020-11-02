@@ -6,6 +6,13 @@ h1 {
   text-align: center;
 }
 
-#showExtra {
+
+#extras {
   display: none;
+}
+label {
+  font-weight: 100 ;
+}
+p {
+  color: gray;
 }
