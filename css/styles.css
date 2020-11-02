@@ -5,12 +5,7 @@ body {
 h1 {
   text-align: center;
 }
-#destinations {
-  display: none;
-}
+
 #showExtra {
-  display: none;
-}
-#extras {
   display: none;
 }

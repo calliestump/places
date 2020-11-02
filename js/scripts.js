@@ -1,28 +1,40 @@
+function AddDestination() {
+  this.outputDestination = [];
+}
+AddDestination.prototype.addDestination = function(destination) {
+  this.outputDestination.push(destination);
+}
+
 function Extra(destination, year, landmark) {
   this.destination = destination;
   this.year = year;
   this.landmark = landmark;
 }
 Extra.prototype.extras = function() {
-  return this.destination + "  " + this.year + " " + this.landmark;
+  return this.year + " " + this.landmark;
 }
-jQuery("#destinations").click(function() {
+jQuery("#InputDestinations").click(function() {
   $(this).data("clicked", true);
-});
+}); 
 function branching() {
-  if(jQuery("#destinations").data("clicked")) {
-    $("#places").show();
+  if(jQuery("#inputDestinations").data("clicked")) {
+    $("#extras").show();
   }
 }
 $(document).ready(function() {
-  let idNumber = 1;
+  //let idNumber = 1;
+  let final = new AddDestination();
   $("form#places").submit(function(event) {
     event.preventDefault();
-    let destination = $("#destination").val();
-    let year = $("#year").val();
-    let landmark = $("#landmark").val();
-    $("#destinations").show();
+    //$("#destinations").show();
+    let finalDes = new Extra($("#inputDestination").val(), $("#year").val(), $("#landmark").val());
+    //let destination = $("#destinations").val();
+    //let year = $("#year").val();
+    //let landmark = $("#landmark").val();
+   // let location = new Extra(destination, year, landmark);
+
+    final.addDestination($("#inputDestination").val());
     branching();
-    location = new Extra(destination, year, landmark);
+    $("#outputDestination").append("<li>" +  destination.extras(destination) + "</li>");
   });
 });
